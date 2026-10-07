@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Sis 🎂</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: radial-gradient(
+        circle,
+        #40135c,
+        #160622 55%,
+        #000000
+    );
+
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+
+/* Main Card */
+
+.card {
+    width: 90%;
+    max-width: 600px;
+
+    padding: 35px 22px;
+
+    text-align: center;
+
+    border-radius: 28px;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    box-shadow:
+        0 0 30px rgba(255,80,180,0.5);
+
+    backdrop-filter: blur(8px);
+
+    z-index: 5;
+}
+
+
+/* Heading */
+
+h1 {
+    margin: 0 0 10px;
+
+    font-size: clamp(35px,8vw,60px);
+
+    animation: glow 1.3s infinite alternate;
+}
+
+.subtitle {
+    font-size: 22px;
+    color: #ffd4eb;
+}
+
+
+/* Cake */
+
+.cake {
+    font-size: 110px;
+
+    animation: bounce 1s infinite;
+}
+
+
+/* Message */
+
+.message {
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    margin: 15px auto;
+
+    max-width: 500px;
+}
+
+
+/* Button */
+
+button {
+
+    border: none;
+
+    border-radius: 25px;
+
+    padding: 12px 22px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    color: white;
+
+    background: #ff72b6;
+
+    box-shadow: 0 0 18px #ff72b6;
+}
+
+
+/* Floating Hearts */
+
+.float {
+
+    position: fixed;
+
+    bottom: -70px;
+
+    font-size: 32px;
+
+    animation: rise linear infinite;
+
+    z-index: 2;
+}
+
+
+/* Confetti */
+
+.confetti {
+
+    position: fixed;
+
+    top: -30px;
+
+    font-size: 25px;
+
+    animation: fall linear infinite;
+
+    z-index: 1;
+}
+
+
+/* Glow Animation */
+
+@keyframes glow {
+
+    from {
+        text-shadow: 0 0 8px #ff72b6;
+    }
+
+    to {
+        text-shadow:
+        0 0 25px #ff72b6,
+        0 0 50px #c64cff;
+    }
+
+}
+
+
+/* Cake Animation */
+
+@keyframes bounce {
+
+    0%,100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-12px) scale(1.05);
+    }
+
+}
+
+
+/* Floating Animation */
+
+@keyframes rise {
+
+    to {
+        transform:
+        translateY(-115vh)
+        rotate(360deg);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* Confetti Animation */
+
+@keyframes fall {
+
+    to {
+        transform:
+        translateY(115vh)
+        rotate(360deg);
+
+        opacity: 0;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+    <h1>
+        🎉 HAPPY BIRTHDAY 🎉
+    </h1>
+
+
+    <div class="subtitle">
+        To my amazing Sis! 💖
+    </div>
+
+
+    <div class="cake">
+        🎂
+    </div>
+
+
+    <div class="message">
+
+        Ek saal aur badi ho gayi, 😂
+
+        <br>
+
+        par akal abhi bhi same version par hai! 🤣
+
+        <br>
+
+        Happiness aur success mile,
+
+        <br>
+
+        aur thodi si common sense bhi! 😂
+
+        <br><br>
+
+        <b>
+            Happy Birthday, meri pagal sister! ❤️🎂
+        </b>
+
+    </div>
+
+
+    <button onclick="birthdayWish()">
+
+        🎊 Tap for more wishes 🎊
+
+    </button>
+
+
+    <p id="extra"></p>
+
+</div>
+
+
+
+<script>
+
+
+/* Floating emojis */
+
+const emojis = [
+    "❤️",
+    "💖",
+    "💕",
+    "💗",
+    "🎈",
+    "✨",
+    "🌸"
+];
+
+
+for (let i = 0; i < 18; i++) {
+
+    let heart = document.createElement("div");
+
+    heart.className = "float";
+
+    heart.textContent =
+        emojis[
+            Math.floor(
+                Math.random() * emojis.length
+            )
+        ];
+
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+
+    heart.style.animationDuration =
+        4 + Math.random() * 5 + "s";
+
+
+    heart.style.animationDelay =
+        -Math.random() * 7 + "s";
+
+
+    document.body.appendChild(heart);
+
+}
+
+
+
+/* Confetti */
+
+for (let i = 0; i < 18; i++) {
+
+    let confetti =
+        document.createElement("div");
+
+
+    confetti.className = "confetti";
+
+
+    confetti.textContent =
+        ["🎉","✨","🎊","💖"][
+            Math.floor(Math.random() * 4)
+        ];
+
+
+    confetti.style.left =
+        Math.random() * 100 + "vw";
+
+
+    confetti.style.animationDuration =
+        3 + Math.random() * 4 + "s";
+
+
+    confetti.style.animationDelay =
+        -Math.random() * 6 + "s";
+
+
+    document.body.appendChild(confetti);
+
+}
+
+
+
+/* Button */
+
+function birthdayWish() {
+
+    document.getElementById("extra").innerHTML =
+    "🥳 Ab cake khila do, emotional speech baad mein dena! 🍰😂";
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
