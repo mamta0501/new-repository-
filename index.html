@@ -216,7 +216,10 @@ button {
 </head>
 
 
-<body>
+<body> 
+    <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+    </audio>
 
 
 <div class="card">
@@ -364,6 +367,9 @@ function birthdayWish() {
 
     document.getElementById("extra").innerHTML=
      "congratulations!👏,teri comman sense tujhe mil gyi🧠”;
+
+    document.getElementById("bgMusic").play();
+    
 
 }
 
