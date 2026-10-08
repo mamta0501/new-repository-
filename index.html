@@ -258,14 +258,9 @@ button {
         </b>
 
     </div>
-
-
-    <button onclick="birthdayWish()">
-
+    <button id="wishBtn" type="button">
         🎊 Tap kr 🎊
-
     </button>
-
         
     <p id="extra"></p>
 
@@ -276,18 +271,17 @@ button {
        </audio>
         
 <script>
-    function birthdayWish() 
+    function wishBtn() 
     {
-        document.getElementById("extra").innerHTML=
-            "ye le tera gift 🎁🎁<br><br>" +
-            "🧠 common sense...<br>"
-        +
-            "kbhi jrurat pde to use kr lena!😂❤️";
-        
-        document.getElementById("bgMusic").play();
-    
-        
-    }
+        document.getElementById("wishBtn").addEventListener("click", function () {
+
+    document.getElementById("extra").innerHTML =
+        "Ye le tera gift 🎁🎁<br><br>" +
+        "🧠 Common sense...<br>" +
+        "Kabhi zarurat pade to use kar lena! 😂❤️";
+
+    document.getElementById("bgMusic").play();
+   });
 
 
 /* Floating emojis */
